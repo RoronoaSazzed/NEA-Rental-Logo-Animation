@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nea Rental Logo Animation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parentDiv {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .wrapper {
+        width: 500px;
+      }
+
+      @keyframes houseIn {
+        16% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        16%,
+        100% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      #back-building {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        animation: backBuildingIn 5s ease-in-out infinite;
+      }
+
+      @keyframes backBuildingIn {
+        0%,
+        16% {
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        }
+
+        32% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        32%,
+        100% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      /* @keyframes buildingStrokeIn {
+        40% {
+          stroke-dashoffset: 0px;
+        }
+
+        40%,
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      } */
+
+      #text {
+        animation: textClipIn 5s ease-in-out infinite;
+      }
+
+      @keyframes textClipIn {
+        0%,
+        32% {
+          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        }
+
+        48% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        48%,
+        100% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      /* @keyframes textIn {
+        60% {
+          stroke-dashoffset: 0px;
+        }
+
+        60%,
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      }*/
+
+      @keyframes bottomLineIn1 {
+        0%,
+        48% {
+          stroke-dasharray: 472px;
+          stroke-dashoffset: 472px;
+        }
+
+        64% {
+          stroke-dashoffset: 0px;
+        }
+
+        80%,
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      }
+
+      @keyframes bottomLineIn2 {
+        0%,
+        54% {
+          stroke-dasharray: 328px;
+          stroke-dashoffset: 328px;
+        }
+
+        70% {
+          stroke-dashoffset: 0px;
+        }
+
+        80%,
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      }
+
+      @keyframes bottomLineIn3 {
+        0%,
+        60% {
+          stroke-dasharray: 230px;
+          stroke-dashoffset: 230px;
+        }
+
+        76% {
+          stroke-dashoffset: 0px;
+        }
+
+        80%,
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      }
+
+      /* #building-1 {
+        stroke-dasharray: 1062.25244140625px;
+        stroke-dashoffset: 1062.25244140625px;
+        animation: buildingStrokeIn 5s ease-in-out infinite;
+      }
+
+      #building-2 {
+        stroke-dasharray: 1186px;
+        stroke-dashoffset: 1186px;
+        animation: buildingStrokeIn 5s ease-in-out infinite;
+      }
+
+      #building-3 {
+        stroke-dasharray: 930.00048828125px;
+        stroke-dashoffset: 930.00048828125px;
+        animation: buildingStrokeIn 5s ease-in-out infinite;
+      }
+
+      @keyframes strokeIn {
+        100% {
+          stroke-dashoffset: 0px;
+        }
+      } */
+
+      /* #text-1 {
+        stroke-dasharray: 1260.053955078125px;
+        stroke-dashoffset: 1260.053955078125px;
+        animation: textIn 5s ease-in-out infinite;
+      }
+
+      #text-2 {
+        stroke-dasharray: 156.99945068359375px;
+        stroke-dashoffset: 156.99945068359375px;
+        animation: textIn 5s ease-in-out infinite;
+      }
+
+      #text-3 {
+        stroke-dasharray: 1161.64501953125px;
+        stroke-dashoffset: 1161.64501953125px;
+        animation: textIn 5s ease-in-out infinite;
+      } */
+
+      #house-body {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        animation: houseIn 5s ease-in-out infinite;
+      }
+
+      @keyframes bodyIn {
+        100% {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+
+      #house-roof {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        animation: houseIn 5s ease-in-out infinite;
+      }
+
+      #line-1 {
+        stroke-dasharray: 472px;
+        stroke-dashoffset: 472px;
+        animation: bottomLineIn1 5s ease-in-out infinite;
+      }
+
+      #line-2 {
+        stroke-dasharray: 328px;
+        stroke-dashoffset: 328px;
+        animation: bottomLineIn2 5s ease-in-out infinite;
+      }
+
+      #line-3 {
+        stroke-dasharray: 230px;
+        stroke-dashoffset: 230px;
+        animation: bottomLineIn3 5s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="wrapper">
+        <svg
+          width="100%"
+          min-height="0"
+          viewBox="0 0 1098 422"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="LS Logo">
+            <g id="bottom-line">
+              <path
+                id="line-1"
+                d="M514.843 288.752H986.843"
+                stroke="#4FA13B"
+                stroke-width="15"
+              />
+              <path
+                id="line-2"
+                d="M586.843 314.752H914.843"
+                stroke="#5CB947"
+                stroke-width="15"
+              />
+              <path
+                id="line-3"
+                d="M635.843 340.752H865.843"
+                stroke="#54A53E"
+                stroke-width="15"
+              />
+            </g>
+            <g id="text">
+              <path
+                id="text-1"
+                d="M438.093 88.9985H476.593M476.593 88.9985H515.093M476.593 88.9985V191.998M540.843 145.998V89.4985H576.093C602.093 89.4985 601.593 145.998 576.093 145.998M540.843 145.998V192.498M540.843 145.998H576.093M576.093 145.998C587.093 167.748 599.093 192.241 599.093 192.498M631.593 81.2485V191.748M665.843 145.248V89.4985H700.843C725.843 89.4985 728.093 145.248 700.843 145.248H665.843ZM665.843 145.248V191.998M753.343 81.4985V183.498H808.343M893.343 88.2485H834.343V137.498M834.343 137.498H883.093M834.343 137.498V184.248H893.343"
+                stroke="#4C9C39"
+                stroke-width="15"
+              />
+              <path
+                id="text-2"
+                d="M1008.59 81.2485V183.248H1063.59"
+                stroke="#949599"
+                stroke-width="15"
+              />
+              <path
+                id="text-3"
+                d="M586.843 222.755H564.343V237.255M564.343 237.255H585.718M564.343 237.255V253.255H587.968M770.093 222.755H747.593V237.255M747.593 237.255H768.968M747.593 237.255V253.255H771.218M606.718 245.63C606.718 251.13 610.468 254.005 617.468 254.005C624.968 254.005 628.906 251.817 628.906 245.63C628.906 234.192 606.718 240.317 606.718 230.13C606.718 223.63 611.406 221.505 617.468 221.505C623.531 221.505 628.218 225.88 628.218 230.505M878.994 245.63C878.994 251.13 882.744 254.005 889.744 254.005C897.244 254.005 901.182 251.817 901.182 245.63C901.182 234.192 878.994 240.317 878.994 230.13C878.994 223.63 883.682 221.505 889.744 221.505C895.807 221.505 900.494 225.88 900.494 230.505M645.593 222.755H660.093M660.093 222.755H674.593M660.093 222.755V256.255M832.144 222.755H846.644M846.644 222.755H861.144M846.644 222.755V256.255M948.843 219.505V252.755H971.031M990.343 219.505V252.755H1012.53M1055.72 231.255C1055.72 228.13 1050.97 222.255 1043.59 222.255C1036.22 222.255 1033.73 228.01 1032.09 231.255C1031.47 232.496 1029.87 237.649 1031.47 243.755C1033.06 249.86 1036.72 254.38 1043.59 254.38C1050.47 254.38 1055.72 248.005 1055.72 243.755M447.093 219.755V255.755M471.593 256.005V222.908C477.964 222.908 491.095 256.005 494.843 256.005V219.255M791.045 256.005V222.908C797.416 222.908 810.547 256.005 814.295 256.005V219.255M517.343 219.255C517.343 223.067 526.833 252.978 528.843 253.005C530.853 253.031 540.843 222.38 540.843 219.255M693.593 256.005V222.992C700.309 222.992 707.322 253.066 707.711 253.066C708.101 253.066 715.113 222.992 722.281 222.992V256.005"
+                stroke="#4D9A3A"
+                stroke-width="7"
+              />
+            </g>
+            <g id="back-building">
+              <path
+                id="building-1"
+                d="M34.4069 295H67.1569M34.4069 258.25H67.1569M34.4069 219.25H78.4069H120.907V104H77.6569M34.4069 181.5H78.4069H120.907M34.4069 143.5H78.4069H120.907M34.4069 334H78.4069V373H34.4069V104H77.6569M77.6569 104C77.6569 104 78.114 190.682 78.4069 243.5"
+                stroke="url(#paint0_linear_7_5)"
+                stroke-width="15"
+              />
+              <path
+                id="building-2"
+                d="M335.907 104V373H379.907V104H293.407V230M379.907 295H335.907M379.907 258.25H335.907M379.907 219.25H335.907H293.407M379.907 181.5H335.907H293.407M379.907 143.5H335.907H293.407M379.907 334H335.907"
+                stroke="url(#paint1_linear_7_5)"
+                stroke-width="15"
+              />
+              <path
+                id="building-3"
+                d="M154.657 136H207.439H259.657M154.657 88.5H207.3H259.657M259.657 210V40H207.3M154.657 210V40H207.3M207.3 40L207.657 210M259.657 181H207.572H154.657"
+                stroke="url(#paint2_linear_7_5)"
+                stroke-width="15"
+              />
+            </g>
+            <g id="house">
+              <g id="house-roof">
+                <mask
+                  id="path-10-outside-1_7_5"
+                  maskUnits="userSpaceOnUse"
+                  x="62.1569"
+                  y="166.75"
+                  width="290"
+                  height="151"
+                  fill="black"
+                >
+                  <rect
+                    fill="white"
+                    x="62.1569"
+                    y="166.75"
+                    width="290"
+                    height="151"
+                  />
+                  <path
+                    d="M77.1569 251.5L207.657 183.75V221.25L77.1569 292V251.5Z"
+                  />
+                  <path
+                    d="M337.157 251.5L207.657 183.75V221.25L337.157 292V251.5Z"
+                  />
+                </mask>
+                <path
+                  d="M77.1569 251.5L207.657 183.75V221.25L77.1569 292V251.5Z"
+                  fill="url(#paint3_linear_7_5)"
+                />
+                <path
+                  d="M337.157 251.5L207.657 183.75V221.25L337.157 292V251.5Z"
+                  fill="url(#paint4_linear_7_5)"
+                />
+                <path
+                  d="M200.157 183.75V221.25H215.157V183.75H200.157ZM77.1569 251.5L70.2455 238.187L62.1569 242.386V251.5H77.1569ZM207.657 183.75L214.61 170.459L207.684 166.835L200.745 170.437L207.657 183.75ZM207.657 221.25L214.849 208.086L207.684 204.172L200.508 208.063L207.657 221.25ZM77.1569 292H62.1569V317.195L84.3061 305.187L77.1569 292ZM337.157 251.5H352.157V242.419L344.11 238.209L337.157 251.5ZM337.157 292L329.965 305.164L352.157 317.288V292H337.157ZM84.0684 264.813L214.568 197.063L200.745 170.437L70.2455 238.187L84.0684 264.813ZM200.508 208.063L70.0078 278.813L84.3061 305.187L214.806 234.437L200.508 208.063ZM92.1569 292V251.5H62.1569V292H92.1569ZM344.11 238.209L214.61 170.459L200.704 197.041L330.204 264.791L344.11 238.209ZM200.465 234.414L329.965 305.164L344.349 278.836L214.849 208.086L200.465 234.414ZM352.157 292V251.5H322.157V292H352.157Z"
+                  fill="white"
+                  mask="url(#path-10-outside-1_7_5)"
+                />
+              </g>
+              <path
+                id="shed-line"
+                d="M207.657 176.5V229.5"
+                stroke="white"
+                stroke-width="15"
+              />
+              <g id="house-body">
+                <mask
+                  id="path-13-outside-2_7_5"
+                  maskUnits="userSpaceOnUse"
+                  x="86.6569"
+                  y="218"
+                  width="240"
+                  height="179"
+                  fill="black"
+                >
+                  <rect
+                    fill="white"
+                    x="86.6569"
+                    y="218"
+                    width="240"
+                    height="179"
+                  />
+                  <path
+                    d="M206.657 236L101.657 295.75V382H311.657V295.75L206.657 236ZM196.347 361.31H164.967V329.94H196.347V361.31ZM196.537 309.81H165.157V278.44H196.537V309.81ZM248.347 361.31H216.967V329.94H248.347V361.31ZM248.347 309.81H216.967V278.44H248.347V309.81Z"
+                  />
+                </mask>
+                <path
+                  d="M206.657 236L101.657 295.75V382H311.657V295.75L206.657 236ZM196.347 361.31H164.967V329.94H196.347V361.31ZM196.537 309.81H165.157V278.44H196.537V309.81ZM248.347 361.31H216.967V329.94H248.347V361.31ZM248.347 309.81H216.967V278.44H248.347V309.81Z"
+                  fill="url(#paint5_linear_7_5)"
+                />
+                <path
+                  d="M206.657 236L101.657 295.75V382H311.657V295.75L206.657 236ZM196.347 361.31H164.967V329.94H196.347V361.31ZM196.537 309.81H165.157V278.44H196.537V309.81ZM248.347 361.31H216.967V329.94H248.347V361.31ZM248.347 309.81H216.967V278.44H248.347V309.81Z"
+                  stroke="white"
+                  stroke-width="30"
+                  mask="url(#path-13-outside-2_7_5)"
+                />
+              </g>
+            </g>
+          </g>
+          <defs>
+            <linearGradient
+              id="paint0_linear_7_5"
+              x1="77.6569"
+              y1="104"
+              x2="77.6569"
+              y2="373"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#97969B" />
+              <stop offset="0.484375" stop-color="#CDCDCD" />
+              <stop offset="1" stop-color="#96979C" />
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_7_5"
+              x1="336.657"
+              y1="104"
+              x2="336.657"
+              y2="373"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#97969B" />
+              <stop offset="0.484375" stop-color="#CDCDCD" />
+              <stop offset="1" stop-color="#96979C" />
+            </linearGradient>
+            <linearGradient
+              id="paint2_linear_7_5"
+              x1="207.157"
+              y1="40"
+              x2="207.157"
+              y2="210"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#97969B" />
+              <stop offset="0.484375" stop-color="#CDCDCD" />
+              <stop offset="1" stop-color="#96979C" />
+            </linearGradient>
+            <linearGradient
+              id="paint3_linear_7_5"
+              x1="337.157"
+              y1="271.5"
+              x2="215.157"
+              y2="203"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#58BE3F" stop-opacity="0.75" />
+              <stop offset="1" stop-color="#539E41" />
+            </linearGradient>
+            <linearGradient
+              id="paint4_linear_7_5"
+              x1="337.157"
+              y1="271.5"
+              x2="215.157"
+              y2="203"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#58BE3F" stop-opacity="0.75" />
+              <stop offset="1" stop-color="#539E41" />
+            </linearGradient>
+            <linearGradient
+              id="paint5_linear_7_5"
+              x1="206.657"
+              y1="236"
+              x2="206.657"
+              y2="382"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#4F9D38" />
+              <stop offset="0.510417" stop-color="#5BB446" />
+              <stop offset="1" stop-color="#59B045" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
